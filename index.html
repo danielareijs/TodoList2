@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
   </head>
   <body>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1> To Do List </h1>
+          <div id="todo-list">
+          </div>
+          <form id="createTask">
+            <input id="newTask" placeholder="New Task" />
+            <button id="addBtn">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
