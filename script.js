@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
 var getAndDisplayAllTasks = function(){
   $.ajax({
     type: 'GET',
@@ -8,7 +9,7 @@ var getAndDisplayAllTasks = function(){
     success: function(response, textStatus){
       $('#todo-list').empty();
       response.tasks.forEach(function(item){
-        $('#todo-list').append('<div class="row"><p class="col-xs-8">' + item.content + '</p><button class="removeBtn" data-id="' + item.id + '">Delete</button><input type="checkbox" class="markComplete" data-id="' + item.id + '"' + (item.completed ? 'checked' : '') + '>');
+        $('#todo-list').append('<div class="row"><input type="checkbox" class="col-xs-1 markComplete" data-id="' + item.id + '"' + (item.completed ? 'checked' : '') + '><p class="col-xs-8 listItem">' + item.content + '</p><button class="removeBtn" data-id="' + item.id + '">x</button>');
       });
     },
     error: function(request, textStatus, errorMessage){
@@ -77,30 +78,29 @@ var markTaskAsComplete = function(id){
 };
 
 
-var markTastAsActive = function(){
+var markTaskAsActive = function(id){
   $.ajax({
     type: 'PUT',
-    url: 'https://altcademy-to-do-list-api.herokuapp.com/tasks/' + id + '/mark_complete?api_key=217',
+    url: 'https://altcademy-to-do-list-api.herokuapp.com/tasks/' + id + '/mark_active?api_key=217',
     dataType: 'json',
     success: function(response, textStatus){
-      console.log(response);
+      getAndDisplayAllTasks();
     },
     error: function(request, textStatus, errorMessage){
       console.log(errorMessage);
     }
   })
-}
+};
 
 
 $(document).on('change', '.markComplete', function(){
   if(this.checked){
     markTaskAsComplete($(this).data('id'));
   } else {
-    markTaskActive($(this).data('id'));
-  };
+    markTaskAsActive($(this).data('id'));
+  }
 });
 
 getAndDisplayAllTasks();
-
 
 });

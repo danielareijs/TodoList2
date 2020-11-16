@@ -1,7 +1,71 @@
+.container {
+  margin: 0 auto;
+  width: 60%;
+}
+
 h1 {
   color: #add3d9;
+  text-align: center;
+  margin: 20px auto;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+
+.filterHeader {
+  text-align: center;
+}
+
+button {
+  display: inline;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #add3d9;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 10px;
+  background-color: white;
+  color: #add3d9;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #add3d9;
+  color: white;
+}
+
+.markComplete {
+  margin-right: 10px;
+}
+
+.listItem {
+  font-weight: 200;
+  font-size: 15px;
+}
+
+#newTask {
+  border: 1px solid #add3d9;
+  font-weight: 200;
+  opacity: 0.8;
 }
 
 .removeBtn {
-  margin-right: 10px;
+  opacity: 0.5;
+  float: right;
+  margin: 5px !important;
+  width: 25px;
+  border: none;
+}
+
+.removeBtn:hover {
+  opacity: 1;
+  background-color: white;
+  color: #add3d9;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 35px;
+  }
 }
