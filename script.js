@@ -14,7 +14,6 @@ var getAndDisplayAllTasks = function(){
       } else {
         $('#todo-list').append('<div class="row taskRow active"><input type="checkbox" class="col-xs-1 markComplete" data-id="' + item.id + '"' + (item.completed ? 'checked' : '') + '><p class="col-xs-8 listItem">' + item.content + '</p><button class="removeBtn" data-id="' + item.id + '">x</button></div>');
       }
-
       });
     },
     error: function(request, textStatus, errorMessage){

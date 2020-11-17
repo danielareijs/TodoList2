@@ -44,14 +44,6 @@ button:hover {
   font-size: 15px;
 }
 
-.odd {
-  background-color: blue;
-}
-
-.even {
-  background-color: red;
-}
-
 #newTask {
   border: 1px solid #add3d9;
   font-weight: 200;
